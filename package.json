@@ -1,0 +1,39 @@
+{
+  "name": "connector-seed",
+  "version": "1.0.0",
+  "description": "nodejs project reference for connectors",
+  "main": "server.js",
+  "repository": "git@git.4all.com:quiq/poc/connector-seed.git",
+  "author": "lucas.wundervald@4all.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "awilix": "^4.2.6",
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "joi": "^17.2.1",
+    "morgan": "^1.10.0",
+    "uuidv4": "^6.2.3",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  }
+}
