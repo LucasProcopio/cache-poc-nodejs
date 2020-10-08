@@ -17,6 +17,10 @@ const exampleController = container.resolve('exampleController');
 
 /** Recipe  */
 routes.get('/example', validatorMiddleware(exampleSchema), handle(exampleController.index));
+
+/** Healthcheck */
+routes.get('/healthcheck', (_, res) => res.json({ status: 'UP'}));
+
 /**
  * Not Found
  */
