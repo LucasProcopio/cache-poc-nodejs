@@ -20,8 +20,9 @@ module.exports = (ctx) => {
 
     ApiRouter.use('/example', handle(ctx.exampleController.router));
 
-    DefaultRouter.use('/api/v1', ApiRouter);
+    DefaultRouter.use('/api', ApiRouter);
 
+    DefaultRouter.get('/healthcheck', (_, res) => res.json({ status: 'UP' }));
     DefaultRouter.use('/*', (req, res, next) => next(ctx.exception.notFound()));
     DefaultRouter.use(ctx.httpErrorMiddleware);
 
