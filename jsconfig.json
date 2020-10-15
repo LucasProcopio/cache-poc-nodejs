@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonJS",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["./src/*"],
+            "config/*": ["./config/*"],
+            "schemas/*":["./src/interface/http/schemas/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

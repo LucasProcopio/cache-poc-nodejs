@@ -1,7 +1,15 @@
-const server = require('./src/server');
+const startApplication = async () => {
 
-server.listen(process.env.SERVER_PORT || 3000, () => {
-  server.appLogger.info(`Server started on port: ${process.env.SERVER_PORT}`);
-});
+    const container = require('./src/container');
 
-module.exports = server;
+    const app = container.resolve('application');
+
+    app
+        .start()
+        .catch((error) => {
+            app.logger.error(error.stack);
+            process.exit();
+        });
+};
+
+startApplication();
