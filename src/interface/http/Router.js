@@ -6,11 +6,11 @@ const DefaultRouter = express.Router();
 const ApiRouter = express.Router();
 
 /**
-    * @param {Object} ctx - Dependency Injection.
-    * @param {import('./middlewares/ValidatorMiddleware')} ctx.validatorMiddleware
-    * @param {import('src/interface/http/controllers/example/ExampleController')} ctx.exampleController
-    * @param {import('src/interface/http/middlewares/HttpErrorMiddleware')} ctx.httpErrorMiddleware
-    */
+ * @param {Object} ctx - Dependency Injection.
+ * @param {import('./middlewares/ValidatorMiddleware')} ctx.validatorMiddleware
+ * @param {import('src/interface/http/controllers/example/ExampleController')} ctx.exampleController
+ * @param {import('src/interface/http/middlewares/HttpErrorMiddleware')} ctx.httpErrorMiddleware
+ */
 module.exports = (ctx) => {
 
     DefaultRouter
@@ -20,9 +20,8 @@ module.exports = (ctx) => {
 
     ApiRouter.use('/example', handle(ctx.exampleController.router));
 
-    DefaultRouter.use('/api', ApiRouter);
+    DefaultRouter.use('/api/v1', ApiRouter);
 
-    DefaultRouter.use('/api', ApiRouter);
     DefaultRouter.use('/*', (req, res, next) => next(ctx.exception.notFound()));
     DefaultRouter.use(ctx.httpErrorMiddleware);
 
