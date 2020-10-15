@@ -1,5 +1,5 @@
 module.exports = () => ({
-  buildPayload: async data => {
-    return data;
-  }
+    buildPayload: async data => {
+        return data;
+    }
 });
