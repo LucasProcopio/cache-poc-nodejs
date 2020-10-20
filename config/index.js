@@ -8,12 +8,13 @@ const envToObj = env => {
 const ENV = process.env.NODE_ENV;
 
 const loadEnvironment = ({
-    'DEV':
+    'dev':
      require('./dev.json')
     ,
-    'HOMOLOG':
-    require('./homolog.json'),
-    'PROD':
+    'homolog':
+    require('./homolog.json')
+    ,
+    'production':
     envToObj(parsed)
 });
 
