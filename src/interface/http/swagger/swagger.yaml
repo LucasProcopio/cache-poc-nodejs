@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+    title: Rappi Connector
+    version: 0.3.0
+    description: '<p>This is the Rappi Connector openApi specifications</p>'
+servers:
+    - url: http://localhost:3000/api
+      description: Local
+    - url: https://k8s.homolog.quiq.delivery/orders-service/api
+      description: Homolog
+paths:
+    /api/webhook/rappi/orders:
+        post:
+            tags:
+                - WebhookRappi
+            operationId: webhookRappiOrders
+            summary: (WIP) Receive updates on new orders from Rappi Origin
+            description: Receive updates on new orders from Rappi Origin. WIP indicates pending parameters specifications from Rappi team.
+
+    /api/webhook/rappi/events:
+        post:
+            tags:
+                - WebhookRappi
+            operationId: webhookRappiEvents
+            summary: (WIP) Receive updates on new events from Rappi Origin
+            description: Receive updates on new events from Rappi Origin. WIP indicates pending parameters specifications from Rappi team.
+
+    /api/rappi/take-order:
+        post:
+            tags:
+                - RappiOrders
+            operationId: TakeOrder
+            summary: (WIP) receives order acceptance
+            description: receives the orderId of the order that will be accepted
+
+    /api/rappi/reject-order:
+        post:
+            tags:
+                - RappiOrders
+            operationId: RejectOrder
+            summary: (WIP) reject order
+            description: receives the orderId of the order that will be reject

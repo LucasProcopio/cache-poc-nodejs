@@ -5,7 +5,8 @@
         "paths": {
             "src/*": ["./src/*"],
             "config/*": ["./config/*"],
-            "schemas/*":["./src/interface/http/schemas/*"]
+            "schemas/*":["./src/interface/http/schemas/*"],
+            "test/*":["./test/*"]
         }
     },
     "exclude": [

@@ -1,0 +1,28 @@
+{
+    "application": {
+        "service_name": "Seed Connector",
+        "port": "$APP_PORT",
+        "log_path": "$APP_LOGS_PATH",
+        "stack_erro_visible": false
+    },
+    "integration": {
+        "rest": {
+            "exampleExternalService": {
+                "baseURL": "$EXTERNAL_SERVICE_REST_URL",
+                "timeout": 10000,
+                "externalCallMsg": "Http request to PROVIDER was made by this service"
+            }
+        },
+        "queues": {
+            "aws_client": {
+                "region": "$AWS_REGION",
+                "api_version": "$AWS_API_VERSION"
+            },
+            "orders_url": "$ORDER_QUIQ_QUEUE_URL",
+            "events_url": "$EVENT_QUIQ_QUEUE_URL"
+        },
+        "sessionManager": {
+            "redis": "$REDIS_SESSION_STORAGE"
+        }
+    }
+}

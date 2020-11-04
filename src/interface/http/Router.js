@@ -9,6 +9,7 @@ const ApiRouter = express.Router();
  * @param {Object} ctx - Dependency Injection.
  * @param {import('./middlewares/ValidatorMiddleware')} ctx.validatorMiddleware
  * @param {import('src/interface/http/controllers/example/ExampleController')} ctx.exampleController
+ * @param {import('src/interface/http/middlewares/swaggerMiddleware')} ctx.httpErrorMiddleware
  * @param {import('src/interface/http/middlewares/HttpErrorMiddleware')} ctx.httpErrorMiddleware
  */
 module.exports = (ctx) => {
@@ -19,6 +20,8 @@ module.exports = (ctx) => {
         .use(compression());
 
     ApiRouter.use('/example', handle(ctx.exampleController.router));
+
+    ApiRouter.use('/docs', ctx.swaggerMiddleware);
 
     DefaultRouter.use('/api', ApiRouter);
 
