@@ -6,7 +6,7 @@ const Application = require('src/app/Application');
 const Exception = require('src/infra/error/Exception');
 const Server = require('src/interface/http/Server');
 const Router = require('src/interface/http/Router');
-const Logger = require('src/infra/logging/Logger');
+const Logger = require('src/infra/logging/logger');
 
 container
     .register({
@@ -24,6 +24,7 @@ container
             'src/app/services/**/*.js',
             'src/domain/factories/**/*.js',
             'src/domain/services/**/*.js',
+            'src/domain/enum/**/*.js',
             'src/infra/integration/**/*.js',
             'src/interface/http/errors/**/*.js',
             'src/interface/http/constants/**/*.js',

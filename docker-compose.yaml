@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  node:
+    image: node:14-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    env_file: ./.env
+    command: ["yarn", "dev"]
+    ports:
+      - 3000:3000
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
