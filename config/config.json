@@ -22,7 +22,7 @@
             "events_url": "$EVENT_QUIQ_QUEUE_URL"
         },
         "sessionManager": {
-            "redis": "$REDIS_SESSION_STORAGE"
+            "redis": "$REDIS_SESSION_MANAGER_STORAGE"
         }
     }
 }
