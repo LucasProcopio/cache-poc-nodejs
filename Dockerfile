@@ -2,7 +2,7 @@ FROM node:14-alpine
 WORKDIR /app
 COPY . ./
 
-ARG DEPLOY_ENVIRONMENT
+ARG ENVIRONMENT
 
 RUN yarn audit --level info
 RUN yarn add \
@@ -10,7 +10,7 @@ RUN yarn add \
     yarn cache clean
 
 ENV NODE_PATH=.
-ENV NODE_ENV=${DEPLOY_ENVIRONMENT}
+ENV NODE_ENV=${ENVIRONMENT}
 
 CMD [ "yarn", "start" ]
 
