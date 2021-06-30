@@ -7,7 +7,7 @@
     "author": "lucas.wundervald@4all.com",
     "contributors": [
         "Gabriel Soares <gabriel.soares@4all.com>",
-        "Lucas Henrique Procopio <lucas.procopio@4all.com>",
+        "Lucas Henrique Procopio <lucas.procopio@4all.com>"
     ],
     "license": "MIT",
     "jest": {
@@ -47,8 +47,10 @@
         "express-async-handler": "^1.1.4",
         "fejl": "^2.5.1",
         "http-status": "^1.4.2",
+        "ioredis": "^4.27.6",
         "joi": "^17.2.1",
         "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.21",
         "morgan": "^1.10.0",
         "mysql2": "^2.2.5",
         "node-cron": "^2.0.3",
