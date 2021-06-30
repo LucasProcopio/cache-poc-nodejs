@@ -9,34 +9,13 @@ servers:
     - url: https://k8s.homolog.quiq.delivery/orders-service/api
       description: Homolog
 paths:
-    /api/webhook/rappi/orders:
-        post:
+    /orders:
+        get:
             tags:
-                - WebhookRappi
-            operationId: webhookRappiOrders
-            summary: (WIP) Receive updates on new orders from Rappi Origin
-            description: Receive updates on new orders from Rappi Origin. WIP indicates pending parameters specifications from Rappi team.
-
-    /api/webhook/rappi/events:
-        post:
-            tags:
-                - WebhookRappi
-            operationId: webhookRappiEvents
-            summary: (WIP) Receive updates on new events from Rappi Origin
-            description: Receive updates on new events from Rappi Origin. WIP indicates pending parameters specifications from Rappi team.
-
-    /api/rappi/take-order:
-        post:
-            tags:
-                - RappiOrders
-            operationId: TakeOrder
-            summary: (WIP) receives order acceptance
-            description: receives the orderId of the order that will be accepted
-
-    /api/rappi/reject-order:
-        post:
-            tags:
-                - RappiOrders
-            operationId: RejectOrder
-            summary: (WIP) reject order
-            description: receives the orderId of the order that will be reject
+                - Orders List
+            operationId: list-orders
+            summary: Return a list of items
+            description: Returns a list of items
+            responses:
+                200:
+                    description: successful operation

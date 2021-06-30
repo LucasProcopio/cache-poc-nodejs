@@ -31,6 +31,7 @@ container
             'src/interface/http/middlewares/**/*.js',
             'src/interface/http/controllers/**/*.js',
             'src/interface/http/schemas/**/*.js',
+            'src/infra/repositories/*.js',
         ],
         {
             formatName: 'camelCase',

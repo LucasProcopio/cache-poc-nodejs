@@ -42,7 +42,7 @@
         "cycle": "^1.0.3",
         "date-fns": "^2.16.1",
         "dot-object": "^2.1.4",
-        "dotenv": "^8.2.0",
+        "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "express-async-handler": "^1.1.4",
         "fejl": "^2.5.1",

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 function convert(config) {
     const result = {};
     Object.keys(config).forEach(name => {
