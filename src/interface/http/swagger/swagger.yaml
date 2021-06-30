@@ -1,13 +1,11 @@
 openapi: 3.0.1
 info:
-    title: Rappi Connector
+    title: Cache-POC
     version: 0.3.0
-    description: '<p>This is the Rappi Connector openApi specifications</p>'
+    description: '<p>This is the Cache-POC openApi specifications</p>'
 servers:
-    - url: http://localhost:3000/api
+    - url: http://localhost:4000/api
       description: Local
-    - url: https://k8s.homolog.quiq.delivery/orders-service/api
-      description: Homolog
 paths:
     /orders:
         get:
