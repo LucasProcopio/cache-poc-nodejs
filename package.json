@@ -1,42 +1,68 @@
 {
-    "name": "connector-seed",
+    "name": "orders-microservice",
     "version": "1.0.0",
-    "description": "nodejs project reference for connectors",
+    "description": "Quiq Orders Service",
     "main": "server.js",
-    "repository": "git@git.4all.com:quiq/poc/connector-seed.git",
+    "repository": "git@git.4all.com:quiq/backend/orders.git",
     "author": "lucas.wundervald@4all.com",
+    "contributors": [
+        "Gabriel Soares <gabriel.soares@4all.com>",
+        "Lucas Henrique Procopio <lucas.procopio@4all.com>",
+    ],
     "license": "MIT",
-    "engines": {
-        "node": "f>=12.18.x <12.19.0"
+    "jest": {
+        "testEnvironment": "node"
     },
     "scripts": {
-        "dev": "cross-env NODE_PATH=. NODE_ENV=DEV nodemon -r dotenv/config --unhandled-rejections=strict",
-        "start": "node index.js",
-        "test": "jest"
+        "dev": "cross-env NODE_PATH=. NODE_ENV=dev nodemon",
+        "start": "cross-env NODE_PATH=. node index.js",
+        "migrate": "node_modules/.bin/sequelize db:migrate",
+        "migrate:undo": "node_modules/.bin/sequelize db:migrate:undo:all",
+        "migrate:create": "node_modules/.bin/sequelize migration:generate --name",
+        "lint": "eslint src/ test/",
+        "lint:fix": "eslint src/ test/ --fix",
+        "test": "yarn test:features & yarn test:unit",
+        "test:unit": "jest test/unit",
+        "test:features": "jest -c jest.features.config.js --setupFiles dotenv/config --runInBand.",
+        "test:tdd": "jest --watch",
+        "test:only": "jest -t=only",
+        "test:coverage": "jest --coverage --collectCoverage",
+        "test:coverage:only": "jest --coverage -t=only"
     },
     "dependencies": {
+        "@joi/date": "^2.1.0",
+        "@types/dotenv": "^8.2.0",
         "awilix": "^4.2.6",
         "awilix-express": "^3.0.0",
         "aws-sdk": "^2.762.0",
-        "axios": "^0.20.0",
+        "axios": "^0.21.1",
         "compression": "^1.7.4",
         "cors": "^2.8.5",
+        "cross-env": "^7.0.2",
+        "cycle": "^1.0.3",
+        "date-fns": "^2.16.1",
         "dot-object": "^2.1.4",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-async-handler": "^1.1.4",
         "fejl": "^2.5.1",
         "http-status": "^1.4.2",
         "joi": "^17.2.1",
+        "jsonwebtoken": "^8.5.1",
         "morgan": "^1.10.0",
+        "mysql2": "^2.2.5",
+        "node-cron": "^2.0.3",
+        "sequelize": "^6.3.5",
+        "sequelize-cli": "^6.2.0",
+        "sqs-consumer": "^5.5.0",
         "structure": "^2.0.1",
         "swagger-ui-express": "^4.1.4",
         "uuidv4": "^6.2.3",
         "winston": "^3.3.3",
+        "winston-graylog2": "^2.1.2",
         "yamljs": "^0.3.0"
     },
     "devDependencies": {
-        "cross-env": "^7.0.2",
-        "dotenv": "^8.2.0",
         "eslint": "^7.9.0",
         "eslint-config-prettier": "^6.0.0",
         "eslint-config-standard": "^14.1.1",
@@ -45,9 +71,15 @@
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.1",
-        "faker": "^5.1.0",
         "jest": "^26.4.2",
+        "jest-structure": "^2.0.1",
         "nodemon": "^2.0.4",
-        "prettier": "^2.1.2"
+        "prettier": "^2.1.2",
+        "sqlite3": "^5.0.0",
+        "superagent-defaults": "^0.1.14",
+        "supertest": "6.0.1"
+    },
+    "engines": {
+        "node": "f>=12.18.x <12.19.0"
     }
 }
