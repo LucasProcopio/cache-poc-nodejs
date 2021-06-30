@@ -23,6 +23,17 @@
         },
         "sessionManager": {
             "redis": "$REDIS_SESSION_MANAGER_STORAGE"
+        },
+        "sessionManager": {
+            "redis": "$AWS_ELASTICACHE_REDIS_CONNECTORS_SESSION_MANAGER"
+        },
+        "cache": {
+            "expiration": {
+                "credential": 7200,
+                "order": 28800,
+                "event": 28800,
+                "storeStatus": 86400
+            }
         }
     }
 }

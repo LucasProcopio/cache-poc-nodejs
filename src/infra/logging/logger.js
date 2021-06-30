@@ -39,7 +39,7 @@ module.exports = ({ config }) => {
                     appFormat,
                 ),
             }),
-            new winston.transports.File({ filename: config.application.log_path })
+            //new winston.transports.File({ filename: config.application.log_path })
         ]
     };
 
