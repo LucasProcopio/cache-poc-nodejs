@@ -15,7 +15,6 @@ module.exports = ({ config }) => {
 
         get: async (key) => {
             const value = await redis.get(key);
-
             return value ? JSON.parse(value) : null;
         },
 

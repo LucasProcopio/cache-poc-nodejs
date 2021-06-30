@@ -9,11 +9,57 @@ servers:
 paths:
     /orders:
         get:
+            parameters:
+                - in: query
+                  name: merchantId
+                  type: integer
+                  minimum: 1
+                  description: merchantId to be searched
             tags:
                 - Orders List
             operationId: list-orders
             summary: Return a list of items
             description: Returns a list of items
+            responses:
+                200:
+                    description: successful operation
+        post:
+            tags:
+                - Orders List
+            operationId: set-orders-list
+            summary: set a list of items in cache
+            description: set a list of items in cache
+            requestBody:
+                description: Digital Pos Infos
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                merchantId:
+                                    type: number
+                                    example: 1
+                                    required: true
+            responses:
+                200:
+                    description: successful operation
+        delete:
+            tags:
+                - Orders List
+            operationId: delete-orders-list
+            summary: clear the cache
+            description: clear cache
+            requestBody:
+                description: Digital Pos Infos
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                merchantId:
+                                    type: number
+                                    example: 1
+                                    required: true
             responses:
                 200:
                     description: successful operation
